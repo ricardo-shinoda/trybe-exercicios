@@ -126,34 +126,51 @@
 // O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
 
 
-const nota = 14;
-const percent = (nota / 100) * 100;
+// const nota = 14;
+// const percent = (nota / 100) * 100;
 
-if (nota < 0 || nota > 100) {
-    console.log("Error")
+// if (nota < 0 || nota > 100) {
+//     console.log("Error")
+// }
+
+// else if (percent >= 90) {
+//     console.log("nota A");
+// }
+
+// else if (percent >= 80) {
+//     console.log("nota B");
+// }
+
+// else if (percent >= 70) {
+//     console.log("nota C");
+// }
+
+// else if (percent >= 60) {
+//     console.log("nota D");
+// }
+// else if (percent >= 50) {
+//     console.log("nota E");
+// }
+// else if (percent < 50) {
+//     console.log("nota F");
+// }
+
+// Exercicio 8 - Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+// Bonus: use somente um if .
+
+const num1 = 1;
+const num2 = 1;
+const num3 = 6;
+
+if (num1 % 2 === 0 || num2 % 2 === 0 || num3 %2 === 0 ) {
+    console.log(true);
 }
 
-else if (percent >= 90) {
-    console.log("nota A");
+else {
+    console.log(false);
 }
 
-else if (percent >= 80) {
-    console.log("nota B");
-}
 
-else if (percent >= 70) {
-    console.log("nota C");
-}
-
-else if (percent >= 60) {
-    console.log("nota D");
-}
-else if (percent >= 50) {
-    console.log("nota E");
-}
-else if (percent < 50) {
-    console.log("nota F");
-}
 
 
 
