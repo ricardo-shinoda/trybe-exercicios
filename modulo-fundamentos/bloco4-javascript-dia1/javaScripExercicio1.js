@@ -83,35 +83,77 @@
 // Exemplo: bishop (bispo) -> diagonals (diagonais)
 
 
-const nome = "king";
+// const nome = "king";
 
-switch (nome.toLocaleLowerCase()) {
-    case "bishop":
-        console.log("diogonal");
-        break;
+// switch (nome.toLocaleLowerCase()) {
+//     case "bishop":
+//         console.log("diogonal");
+//         break;
 
-    case "knight":
-        console.log("L shape");
-        break;
+//     case "knight":
+//         console.log("L shape");
+//         break;
 
-    case "pawn":
-        console.log("vertically");
-        break;
+//     case "pawn":
+//         console.log("vertically");
+//         break;
     
-    case "rook":
-        console.log("horizontally/vertically");
-        break;
+//     case "rook":
+//         console.log("horizontally/vertically");
+//         break;
 
-    case "queen":
-        console.log("diagonally, horizontally or vertically");
-        break;
+//     case "queen":
+//         console.log("diagonally, horizontally or vertically");
+//         break;
 
-    case "king":
-        console.log("one square, any direction");
-        break;
+//     case "king":
+//         console.log("one square, any direction");
+//         break;
 
 
-    default:
-        console.log("Invalid name")
+//     default:
+//         console.log("Invalid name")
+// }
+
+
+// Exercicio7 - Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+// Porcentagem >= 90 -> A
+// Porcentagem >= 80 -> B
+// Porcentagem >= 70 -> C
+// Porcentagem >= 60 -> D
+// Porcentagem >= 50 -> E
+// Porcentagem < 50 -> F
+// O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
+
+
+const nota = 14;
+const percent = (nota / 100) * 100;
+
+if (nota < 0 || nota > 100) {
+    console.log("Error")
 }
+
+else if (percent >= 90) {
+    console.log("nota A");
+}
+
+else if (percent >= 80) {
+    console.log("nota B");
+}
+
+else if (percent >= 70) {
+    console.log("nota C");
+}
+
+else if (percent >= 60) {
+    console.log("nota D");
+}
+else if (percent >= 50) {
+    console.log("nota E");
+}
+else if (percent < 50) {
+    console.log("nota F");
+}
+
+
 
