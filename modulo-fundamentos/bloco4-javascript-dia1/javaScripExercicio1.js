@@ -209,6 +209,58 @@
 
 
 
+// Exercicio 11 - 
+
+const salarioBruto = 3000;
+let salarioDescInss = null;
+let salarioDescIr = null;
+//Desconto INSS
+if (salarioBruto <= 1556.94) {
+    salarioDescInss = salarioBruto - (salarioBruto * 0.08);
+}
+
+else if (salarioBruto >= 1556.95 && salarioBruto <= 2594.92) {
+    salarioDescInss = salarioBruto - (salarioBruto * 0.09);
+}
+
+else if (salarioBruto >= 2594.93 && salarioBruto <= 5189.82) {
+    salarioDescInss = salarioBruto - (salarioBruto * 0.11);
+}
+
+else if (salarioBruto > 5189.83) {
+    salarioDescInss = salarioBruto - 570.88;
+}
+// desconto IR
+
+if (salarioDescInss <= 1903.98) {
+    salarioDescIr = salarioDescInss - 0;
+}
+
+else if (salarioDescInss >= 1903.99 || salarioBruto <= 2826.65) {
+    salarioDescIr = salarioDescInss - ((salarioDescInss * 0.075) - 142.80);
+}
+
+else if (salarioDescInss >= 2826.66 || salarioBruto <= 3751.05) {
+    salarioDescIr = salarioDescInss - ((salarioDescInss * 0.15) - 354.80);
+}
+
+else if (salarioDescInss >= 3751.06 || salarioBruto <= 4664.68) {
+    salarioDescIr = salarioDescInss - ((salarioDescInss * 0.225) - 656.13);
+}
+
+else if (salarioDescInss >= 4664.68) {
+    salarioDescIr = salarioDescInss - ((salarioDescInss * 0.275) - 869.36);
+}
+
+console.log(salarioBruto);
+console.log(salarioDescInss);
+console.log(salarioDescIr);
+
+
+
+
+
+
 
 
 
