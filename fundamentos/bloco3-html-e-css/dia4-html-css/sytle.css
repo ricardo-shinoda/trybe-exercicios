@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: aquamarine;
+}
+header{
+    background-color: aqua;
+}
+
+nav{
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+}
+
+.list  {
+    display: inline;
+    /* float: center; */
+}
+
+ul, li{
+    display: inline;
+    padding: 20px;
+    align-items: center;
+    
+}
