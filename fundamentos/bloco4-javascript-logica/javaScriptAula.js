@@ -703,3 +703,88 @@ function bomDiaTryber(nome) {
 bomDiaTryber('João'); // Bom dia, João
 bomDiaTryber('Julia'); // Bom dia, Julia
 bomDiaTryber('Marcelo'); // Bom dia, Marcelo
+
+// Exemplos de funções sem parâmetros:
+
+function bomDia() {
+  return 'Bom dia!';
+}
+
+console.log(bomDia()); // Bom dia!
+
+// outra
+
+let status = 'deslogado';
+
+function logarDeslogar() {
+  if (status === 'deslogado') {
+    status = 'logado';
+  } else {
+    status = 'deslogado';
+  }
+}
+
+console.log(status); // deslogado
+
+logarDeslogar();
+console.log(status); // logado
+
+logarDeslogar();
+console.log(status); // deslogado
+
+console.log('O usuário está ' + status); // O usuário está deslogado
+
+//
+
+// Com função
+function soma(a, b) {
+  return a + b;
+}
+
+console.log(soma(3, 2)); // 7
+
+// another
+
+function maiorNum(primeiroNum, segundoNum) {
+  if (primeiroNum > segundoNum) {
+    return primeiroNum + ' é maior que ' + segundoNum;
+  } else if (segundoNum > primeiroNum) {
+    return segundoNum + ' é maior que ' + primeiroNum;
+  } else {
+    return 'Os números são iguais';
+  }
+}
+
+console.log(maiorNum(10, 20)); // 20 é maior que 10
+console.log(maiorNum(2, -5)); // 2 é maior que -5
+console.log(maiorNum(1, 1)); // Os números são iguais
+
+
+
+//! Refatorando exericicios dia 4.1
+
+//* Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas constantes, a e b , definidas no começo com os valores que serão operados. Faça programas para:
+
+function calculator (firstNum, secondNum) {
+  return firstNum + secondNum;
+  
+}
+
+console.log(calculator(3, 2));
+
+
+//* Faça um programa que retorne o maior de dois números. Defina no começo do programa duas constantes com os valores que serão comparados.
+
+function biggerNum (num1, num2) {
+  if (num1 > num2) {
+    return num1 + " é maior que número: " + num2;
+  } else if (num1 < num2) {
+    return num2 + " é maior que número: " + num1;
+  } else {
+    return "Both numbers are equal";
+  }
+}
+
+console.log(biggerNum(3, 4));
+console.log(biggerNum(35, 4));
+console.log(biggerNum(4, 4));
