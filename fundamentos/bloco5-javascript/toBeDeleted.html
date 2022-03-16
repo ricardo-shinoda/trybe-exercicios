@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+    //   document.getElementById("page-title").innerText = "Na natureza selvagem";
+
+      document.getElementById("paragraph").style.backgroundColor = "red";
+
+      document.getElementById("subtitle").innerText = "Entendendo melhor o que é e para que serve o DOM";
+
+      document.getElementsByTagName("p");
+
+      document.getElementsByTagName("p")[0].style.color = "blue";
+
+    //   document.getElementsByTagName("h4")[0].style.backgroundColor = "blue";
+
+    //   document.querySelector("#page-title").innerText = "de volta para o futuro";
+
+      document.querySelectorAll("#page-title")[0].innerText = "Django";
+
+      document.querySelector("p")[1].style.color = "white";
+
+      document.querySelector("#subtitle")[0].style.backgroundColor = "green";
+
+
+
+        
+
+
+
+
+
+    </script>
+  </body>
+</html>
