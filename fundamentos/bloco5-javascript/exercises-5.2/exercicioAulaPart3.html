@@ -9,7 +9,7 @@
 <body>
   <main id="paiDoPai">
     <section id="pai">
-      <section id="primeiroFilho"></section>
+      <section id="primeiroFilho"></section> //
       <section id="elementoOndeVoceEsta">
         <section id="primeiroFilhoDoFilho"></section>
         <section id="segundoEUltimoFilhoDoFilho"></section>
@@ -22,17 +22,21 @@
   <script>
     // Remova todos os elementos filhos de paiDoPai exceto pai,
     // elementoOndeVoceEsta e primeiroFilhoDoFilho.
-    const pai = document.getElementById('pai');
+    const pai = document.getElementById('pai'); // cria uma let e chama o elemento pai pelo id. pq aqui já exclui o pai da lista de exclusão.
+
+    //faz um for onde o index começa a partir do tamanho da cumprimento dos filhos do pai, começa pelo último.
+    // se o index for maior ou igual a zero continua, e retira um valor do index. é o mesmo processo de trás pra frente.
 
     for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
-      const currentChildren = pai.childNodes[index];
-      if (currentChildren.id !== 'elementoOndeVoceEsta') {
-        currentChildren.remove();
+      const currentChildren = pai.childNodes[index]; //cria um let que recebe o valor do index
+      if (currentChildren.id !== 'elementoOndeVoceEsta') { //se esse valor !== do elemento que pode ficar
+        currentChildren.remove(); // elemento é excluido
       }
     }
 
     const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
-    segundoEUltimoFilhoDoFilho.remove();
+    segundoEUltimoFilhoDoFilho.remove(); // cria variável e chama o elemento a ser deletado pelo id.
+    // O primeiroFilhoDoFilho não é mencionado pois é filho do elementoOndeVoceEsta que não foi deletado.
   </script>
 </body>
 </html>

@@ -22,29 +22,32 @@
 
   <script>
     // 1. Crie um irmão para `elementoOndeVoceEsta`.
-    const pai = document.getElementById('pai');
-    const irmaoElementoOndeVoceEsta = document.createElement('section');
-    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
-    pai.appendChild(irmaoElementoOndeVoceEsta);
+    const pai = document.getElementById('pai'); // tem que chamar o pai pra criar um filho
+    const irmaoElementoOndeVoceEsta = document.createElement('section'); // cria a variável pra poder chamar depois e cria o elemento "section" que é o mesmo do irmão.
+    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta'; // cria o id para o elemento
+    pai.appendChild(irmaoElementoOndeVoceEsta); // adiciona (faz o append) do elemento do novo filho ai pai
+
 
     // 2. Crie um filho para `elementoOndeVoceEsta`.
-    const elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
-    const filhoElementoOndeVoceEsta = document.createElement('section');
-    filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
-    elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta);
+    const elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta'); // cria a variável e chama o id do elemento que vai ganhar o elemento filho.
+    const filhoElementoOndeVoceEsta = document.createElement('section'); // cria a variável do novo filho, criando uma "section".
+    filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta'; //cria o id do novo elemento, o elemento filho.
+    elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta); //adiciona (append) do filho ao elemento pai, nesse caso o elementoOndeVoceEsta
+
 
     // 3. Crie um filho para `primeiroFilhoDoFilho`.
-    const primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho')
-    const filhoPrimeiroFilhoDoFilho = document.createElement('section');
-    filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
-    primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
+    const primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho') // cria a variável para chamar o elemento primeiroFilhoDoFilho pelo id.
+    const filhoPrimeiroFilhoDoFilho = document.createElement('section'); // cria a variável do filho novo, e cria o elemento "section".
+    filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho'; //cria o id do elemento do novo filho.
+    primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho); // adiciona (append) o filho ao elemento pai, nesse caso o PrimeiroFIlhoDoFilho (pai)
+
 
     // 4. A partir desse filho criado, acesse `terceiroFilho`.
-    const terceiroFilho = filhoPrimeiroFilhoDoFilho
-      .parentElement // primeiroFilhoDoFilho
-      .parentElement // elementoOndeVoceEsta
-      .nextElementSibling; // terceiroFilho
-    console.log(terceiroFilho);
+    const terceiroFilho = filhoPrimeiroFilhoDoFilho// cria a let do 3 filho, que recebe o filhoDoPrimeiroFilhoDoFilho.
+      .parentElement // primeiroFilhoDoFilho / para chamar o pai dele
+      .parentElement // elementoOndeVoceEsta / para chamar o pai dele
+      .nextElementSibling; // terceiroFilho / para chamar o próximo elemento (ao lado / mesmo nível)
+    console.log(terceiroFilho); // imprime o 3 filho
   </script>
 </body>
 </html>
