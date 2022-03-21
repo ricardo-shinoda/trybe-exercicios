@@ -15,9 +15,16 @@ window.onload = function (){
 
     let inputFontSize = document.querySelector('input[name="font-size"]')
     inputFontSize.addEventListener('change', function(){
-    let p = document.querySelector("p");
+    let p = document.querySelectorAll("p")[0];
     p.style.fontSize = `${inputFontSize.value}px`;
     localStorage.setItem('5.4-fontSize', `${inputFontSize.value}px`);
+    })
+
+    let inputFontSize1 = document.querySelector('input[name="font-size"]')
+    inputFontSize.addEventListener('change', function(){
+    let p1 = document.querySelectorAll("p")[1];
+    p1.style.fontSize = `${inputFontSize1.value}px`;
+    localStorage.setItem('5.4-fontSize', `${inputFontSize1.value}px`);
     })
 
     let savedBackground = localStorage.getItem('5.4-Background-color');
@@ -27,6 +34,10 @@ window.onload = function (){
     document.body.style.color = savedFontColor;
 
     let savedFontSize = localStorage.getItem('5.4-fontSize');
-    let p = document.querySelector("p");
+    let p = document.querySelectorAll("p")[0];
     p.style.fontSize = savedFontSize;
+
+    let savedFontSize1 = localStorage.getItem('5.4-fontSize');
+    let p1 = document.querySelectorAll("p")[1];
+    p1.style.fontSize = savedFontSize1;
 }
