@@ -41,8 +41,8 @@ myWebpage.addEventListener('dblclick', function() {
     window.location.replace('https://github.com/ricardo-shinoda');
   });
 
-// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
-// a cor do mesmo;
+//* 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
+//* a cor do mesmo;
 
 myWebpage.addEventListener('mouseover', function(event) {
     event.target.style.color = 'yellow';
@@ -52,7 +52,10 @@ myWebpage.addEventListener('mouseover', function(event) {
     event.target.style.color = 'unset';
   });
 
-// Segue abaixo um exemplo do uso de event.target:
+
+
+
+//! Segue abaixo um exemplo do uso de event.target:
 
 
 function resetText(event) {
