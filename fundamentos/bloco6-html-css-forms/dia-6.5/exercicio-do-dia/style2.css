@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+@media screen and (min-width: 400px) {
+      body {
+          background: rgb(104, 206, 247);
+  }
+}
+
+@media screen and (min-width: 850px) {
+    body {
+        background: rgba(199, 238, 141, 0.582);
+}
+}
+
+@media screen and (min-width: 1250px) {
+    body {
+        background: rgb(240, 151, 151);
+} 
+}
