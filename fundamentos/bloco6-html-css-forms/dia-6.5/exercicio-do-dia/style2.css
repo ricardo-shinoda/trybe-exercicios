@@ -6,15 +6,73 @@ html {
     box-sizing: inherit;
   }
 
+  body {
+      display: flex;
+  }
+
+  header p {
+      font-size: 40px;
+      justify-content: center;
+      display: flex;
+  }
+
+nav aside{
+      /* /* display: flex; */
+      justify-content: center;
+      flex-direction: row; */
+  }
+
+
+
+@media screen and (min-width: 0px) {
+    body {
+        background: rgb(243, 78, 2);
+        margin-left: 15px;
+}
+
 @media screen and (min-width: 400px) {
       body {
           background: rgb(104, 206, 247);
+          margin-left: 15px;
+          font-size: 20px;
+  }
+
+  
+
+.menu {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      justify-content: space-evenly;
+      /* margin-right: 30px; */
+      /* flex-grow: 1; */
+      /* flex-wrap: nowrap; */
+      /* margin-left: 20px ; */
+      width: 100%;
   }
 }
 
 @media screen and (min-width: 850px) {
     body {
+        /* display: flex; */
         background: rgba(199, 238, 141, 0.582);
+        font-size: 25px;
+        width: 80%;
+        padding-left: 60px;
+        align-items: center;
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px
+    ;
+    
+}
+
+header p {
+    font-size: 50px;
 }
 }
 
