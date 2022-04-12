@@ -132,7 +132,7 @@ const emailListInData = [
 
 emailListInData.forEach(showEmailList);
 
-//* utilizando o FIND: 
+//* utilizando o FIND: Retorna o primeiro elemento encontrado, somente o primeiro
 
 const numbers = [19, 21, 30, 3, 45, 22, 15];
 
@@ -149,3 +149,140 @@ console.log(verifyEven(14)); // True
 const isEven2 = numbers.find((number) => number % 2 === 0);
 
 console.log(isEven2); // 30
+
+//* exemplo; encontrar o primeiro número que é divisivel por 3 e 5.
+
+const numbers = [19, 21, 30, 3, 45, 22, 15];
+
+const findDivisibleBy3And5 = () => {
+ return numbers.find((number) => number % 3 === 0 && number % 5 ===0);
+}
+
+console.log(findDivisibleBy3And5())
+
+
+// Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
+
+const names = ['João', 'Irene', 'Fernando', 'Maria'];
+
+const findNameWithFiveLetters = () => {
+  // Adicione seu código aqui:
+  return names.find((name) => name.length === 5);
+}
+
+console.log(findNameWithFiveLetters());
+
+// Utilize o find para encontrar a música com id igual a 31031685 , caso ela exista:
+
+
+const musicas = [
+    { id: '31031685', title: 'Partita in C moll BWV 997' },
+    { id: '31031686', title: 'Toccata and Fugue, BWV 565' },
+    { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
+  ]
+  
+  function findMusic(id) {
+    return musicas.find((musica) => musica.id === id);
+  }
+  
+  console.log(findMusic('31031685'));
+
+  // 1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false , use some ;
+
+  const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+  const hasName = (arr, name) => {
+    //Adicione seu código aqui
+    return arr.some((currentName) => currentName === name);
+  }
+  
+  console.log(hasName(names, 'Ana'));
+
+
+// encontrar uma pessoa pelo ano de nascimento dela: 
+
+const books = [
+  {
+    id: 1,
+    name: 'As Crônicas de Gelo e Fogo',
+    genre: 'Fantasia',
+    author: {
+      name: 'George R. R. Martin',
+      birthYear: 1948,
+    },
+    releaseYear: 1991,
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: {
+      name: 'J. R. R. Tolkien',
+      birthYear: 1892,
+    },
+    releaseYear: 1954,
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: {
+      name: 'Isaac Asimov',
+      birthYear: 1920,
+    },
+    releaseYear: 1951,
+  },
+  {
+    id: 4,
+    name: 'Duna',
+    genre: 'Ficção Científica',
+    author: {
+      name: 'Frank Herbert',
+      birthYear: 1920,
+    },
+    releaseYear: 1965,
+  },
+  {
+    id: 5,
+    name: 'A Coisa',
+    genre: 'Terror',
+    author: {
+      name: 'Stephen King',
+      birthYear: 1947,
+    },
+    releaseYear: 1986,
+  },
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: {
+      name: 'H. P. Lovecraft',
+      birthYear: 1890,
+    },
+    releaseYear: 1928,
+  },
+];
+
+// Adicione o código do exercício aqui:
+function authorBornIn1947() {
+  return books.find((book) => book.author.birthYear === 1947).author.name;
+}
+
+console.log(authorBornIn1947());
+
+
+const objPeople = [
+  { name: 'José', age: 21 },
+  { name: 'Lucas', age: 19 },
+  { name: 'Maria', age: 16 },
+  { name: 'Gilberto', age: 18 },
+  { name: 'Vitor', age: 15 },
+];
+
+const verifyAgeDrive = (arrayOfPeople) => (
+  arrayOfPeople.filter((people, ) => (people.age < 18))
+);
+
+console.log(verifyAgeDrive(objPeople));
+// [ { name: 'Maria', age: 16 }, { name: 'Vitor', age: 15 } ]
