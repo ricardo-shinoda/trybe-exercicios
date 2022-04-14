@@ -1,0 +1,15 @@
+//* Exercicio 1
+
+function sum(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+      throw new Error('parameters must be numbers');
+    }
+  
+    return a + b;
+  }
+
+  module.exports = sum; // para enviar o arquivo ao test.js
+
+  //* Exercicio 2
+
+ 
