@@ -1,65 +1,65 @@
 
-// Exercício 1 - Saber de acordo com o grade se o estudando está aprovado ou não.
-// const students = [
-//     { name: 'Maria', grade: 70, approved: '' },
-//     { name: 'José', grade: 56, approved: '' },
-//     { name: 'Roberto', grade: 90, approved: '' },
-//     { name: 'Ana', grade: 81, approved: '' },
-//   ];
+//* Exercício 1 - Saber de acordo com o grade se o estudando está aprovado ou não.
+const students = [
+    { name: 'Maria', grade: 70, approved: '' },
+    { name: 'José', grade: 56, approved: '' },
+    { name: 'Roberto', grade: 90, approved: '' },
+    { name: 'Ana', grade: 81, approved: '' },
+  ];
 
-//   function verifyGrades() {
-//     for (let i = 0; i < students.length; i += 1) {
-//       const student = students[i];
-//       if (student.grade >= 60) {
-//         student.approved = 'Aprovado';
-//       } else {
-//         student.approved = 'Recuperação';
-//       }
-//     }
-//   }
+  function verifyGrades() {
+    for (let i = 0; i < students.length; i += 1) {
+      const student = students[i];
+      if (student.grade >= 60) {
+        student.approved = 'Aprovado';
+      } else {
+        student.approved = 'Recuperação';
+      }
+    }
+  }
 
-//   verifyGrades();
+  verifyGrades();
 
-//   console.log(students);
+  console.log(students);
 
-// Agora o mesmo exercício usando o forEach:
+//  Agora o mesmo exercício usando o forEach:
 
-// const students = [
-//     { name: 'Maria', grade: 70, approved: '' },
-//     { name: 'José', grade: 56, approved: '' },
-//     { name: 'Roberto', grade: 90, approved: '' },
-//     { name: 'Ana', grade: 81, approved: '' },
-// ];
+const students = [
+    { name: 'Maria', grade: 70, approved: '' },
+    { name: 'José', grade: 56, approved: '' },
+    { name: 'Roberto', grade: 90, approved: '' },
+    { name: 'Ana', grade: 81, approved: '' },
+];
 
-// function verifyGrades() {
-//     students.forEach((student, index) => {
-//         if (student.grade >= 60) {
-//             students[index].approved = 'Aprovado';
-//         } else {
-//             students[index].approved = 'Recuperação';
-//         }
-//     });
-// }
+function verifyGrades() {
+    students.forEach((student, index) => {
+        if (student.grade >= 60) {
+            students[index].approved = 'Aprovado';
+        } else {
+            students[index].approved = 'Recuperação';
+        }
+    });
+}
 
-// verifyGrades();
+verifyGrades();
 
-// console.log(students);
+console.log(students);
 
 //* outro exercício: encontrar o primeiro número que seja divisível por 5 em uma lista de números.
 
-// const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
-// let firstMultipleOf5;
-// for (let index = 0; index < numbers.length; index += 1) {
-//     if (numbers[index] % 5 === 0) {
-//         firstMultipleOf5 = numbers[index];
-//         break;
-//     }
-// }
+const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
+let firstMultipleOf5;
+for (let index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] % 5 === 0) {
+        firstMultipleOf5 = numbers[index];
+        break;
+    }
+}
 
-// console.log(firstMultipleOf5);
+console.log(firstMultipleOf5);
 // 50
 
-//* Resolvendo com o arrayFind: 
+//* Resolvendo com o array Find: 
 
 const numbers = [11, 24, 39, 47, 50, 62, 75, 81, 96, 100];
 const firstMultipleOf5 = numbers.find((number) => number % 5 === 0);
@@ -187,7 +187,7 @@ const musicas = [
   
   console.log(findMusic('31031685'));
 
-  // 1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false , use some ;
+  //* 1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false , use some ;
 
   const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
@@ -286,3 +286,5 @@ const verifyAgeDrive = (arrayOfPeople) => (
 
 console.log(verifyAgeDrive(objPeople));
 // [ { name: 'Maria', age: 16 }, { name: 'Vitor', age: 15 } ]
+
+
