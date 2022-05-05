@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-Final-Aula-6.1</title>
+    <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+<script src="dist/js/DatePickerX.min.js"></script>
+    <!-- abaixo o link para o framework Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title is-1">Venha participar do maior sorteio da sua vida!</h1>
+        <label for="nome-completo">Nome: </label>
+        <input class="label" type="text" name="nome" id="nome-completo" minlength="10" maxlength="40">
+        <br> 
+        <label for="input-email">Email: </label>
+        <input class="label" type="email" name="email" id="input-email" minlength="10" maxlength="50">
+        <br>
+        <label for="cidade"></label>
+        <input type="radio" id="cidade" name="local-favorito">Cidade
+        <label for="campo"></label>
+        <input type="radio" id="campo" name="local-favorito">Campo
+        <label for="praia"></label>
+        <input type="radio" id="praia" name="local-favorito">Praia
+        <label for="montanha"> </label>
+        <input type="radio" id="montanha" name="local-favorito">Montanha
+        <br>
+        <label for="text">Por que você deveria ser a pessoa desenvolvedora escolhida pelo concurso TrybeTrip?</label><br>       
+        <textarea class="textarea is" name="resposta" id="text" cols="40" rows="10" maxlength="500"></textarea>
+        <br>
+        <label for="dt">Qual a melhor data para realizar sua viagem?:
+            <input type="date" id="dt" name="data-requerida">
+        </label>
+        <br>
+        <label class="checkbox" for="chec">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe.</label>
+        <input class="checkbox" type="checkbox" id="chec" name="concorda1">        
+        <br>
+        <label for="chec">Concordo que imagens de minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+        <input type="checkbox" id="chec" name="concorda2">        
+        <br>
+    </header>
+    <button class="button is-dark" type="submit" id="sub">Participar do concurso TrybeTrip</button>
+    <button class="button is-danger" type="reset" id="clean">Apagar</button>
+    <script src="./form-script.js"></script>
+</body>
+
+</html>
