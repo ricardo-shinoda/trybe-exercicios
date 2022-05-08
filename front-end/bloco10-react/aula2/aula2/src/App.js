@@ -10,7 +10,7 @@ class App extends React.Component {
         {
           content.map(item => {
             console.log(item);
-            return <Card />
+            return <Card name={item.nome} year={item.ano} />
           })
         }
       </div>
