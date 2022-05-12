@@ -27,25 +27,27 @@ class Form extends React.Component {
       <div>
         <h1> Quiz form </h1>
         <form>
-          <label>Name:
-            <input
-              id="name"
-              name="name"
-              type="text"
-              onChange={this.handleChange}
-              value={name}
-            />
-          </label>
-          
-          <label>Email:
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={this.handleChange}
-              value={email}
-            />
-          </label>
+          <fieldset>
+            <label>Name:
+              <input
+                id="name"
+                name="name"
+                type="text"
+                onChange={this.handleChange}
+                value={name}
+              />
+            </label>
+
+            <label>Email:
+              <input
+                id="email"
+                name="email"
+                type="email"
+                onChange={this.handleChange}
+                value={email}
+              />
+            </label>
+          </fieldset>
 
           <label>Age:
             <select
@@ -78,6 +80,9 @@ class Form extends React.Component {
               value={textField}
             />
           </label>
+
+          <input type="file" />
+
         </form>
       </div >
     );
