@@ -1,11 +1,12 @@
 import './App.css';
 import React from 'react';
+import Data from './Data';
 
-function App(props) {
-  return (
-    <p>
-      { Task(teste)}
-    </p>
+function App() {
+    return (
+    <div>
+      <Data name="Lucas" />
+    </div>
   );
 }
 
