@@ -1,3 +1,2 @@
-### Diretório destinado para os exercícios do curso de Web Development da Trybe
+## Directory created for my exercises on Web Development fullstack course at Trybe.
 
-Alterando o texto como teste
