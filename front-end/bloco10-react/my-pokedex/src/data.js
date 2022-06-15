@@ -84,7 +84,7 @@ const pokemons = [
             value: 460.0,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/f/fd/Spr_4p_143_s.png",
+        image: "https://cdn2.bulbagarden.net/upload/4/40/Spr_5b_143.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Snorlax_(Pok%C3%A9mon)"
     },
     {
