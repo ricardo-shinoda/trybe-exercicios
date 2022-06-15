@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import pokemonDados from './data';
+import pokemons from './data';
 //Import do json criado com os pokemons e seus dados.
 import Pokedex from './Pokedex';
 
@@ -9,7 +9,7 @@ render() {
   return (
     <div className="App">
       <h1> Pokedex </h1>
-      <Pokedex pokemons={pokemonDados} />
+      <Pokedex pokemons={pokemons} />
     </div>
   );
 }
