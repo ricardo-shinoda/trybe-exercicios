@@ -1,28 +1,24 @@
 import React from 'react';
 import './App.css';
+import LoginForm from './components/LoginForm';
 import logo from './logoTrybe.png';
+import RegisterForm from './components/RegisterForm';
 
-function App() {
-  return (
-    <div>
-      <header>
-        <img src={ logo } alt="" srcSet=""/>
-      </header>
-      <main className="app">
-      <section>
-        <h2>Login</h2>
-        <label htmlFor="email">
-        <input type="text" id="email">Email</input>
-        </label>
-        <input>Senha</input>
-        <button>Fazer Login</button>
-      </section>
-      <section>
-        <h2>Register</h2>
-      </section>
-      </main>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <header>
+          <img src={logo} alt="" srcSet="" />
+        </header>
+        <main className="app">
+          <LoginForm />
+          <RegisterForm />
+        </main>
+      </div>
+
+    )
+  }
 }
 
 export default App;
