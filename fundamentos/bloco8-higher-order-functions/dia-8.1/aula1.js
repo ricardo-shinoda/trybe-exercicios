@@ -37,7 +37,19 @@ function sum (number1, number2) {
   const initialSum = sumFixAmount(15)
   console.log(initialSum(5));
 
-  //* HIGHER ORDER FUNCTION
+  //! HIGHER ORDER FUNCTIONS
+
+  const button = document.querySelector('#signup-button');
+
+const registerUser = () => {
+  console.log('Registrado com sucesso!');
+};
+
+button.addEventListener('click', registerUser);
+
+
+
+// Estrurutando uma HOF - imrprimindo números até o 5
 
   const repeat = (number, action) => {
     for (let count = 0; count <= number; count += 1) {
@@ -45,9 +57,13 @@ function sum (number1, number2) {
     }
   };
   
-  repeat(5, console.group);
+  repeat(5, console.group); // 5 Representa até qual número testar
 
-  // outro exercicio
+
+
+
+
+  // outro exercicio- ver qual número de 0 a 9 são pares/ímpares
 
   const repeat = (number, action) => { // number e action são callbacks
     for (let count = 0; count <= number; count += 1) {
@@ -70,33 +86,47 @@ function sum (number1, number2) {
   repeat(9, isEven); // Testa quais números serão pares;
   repeat(9, isOdd); // Testa quais números serão ímpares;
 
+
+
+
   // number generator
 
   const numberGenerator = () => {
-    return Math.random() * 100;
+    return Math.random() * 100; // * 100 pq math traz números de 0 a 1
   }
   
   console.log(numberGenerator());
 
-  // exercício aula 8.1
 
-  const wakeUp = () => 'Acordando!!';
-  const cafe = () => 'Bora tomar café!!';
-  const dormir = () => 'Partiu dormir!!';
   
-  const doingThings = (callback) => {
-    const result = callback();
-    console.log(result);
-  };
-
-
-  doingThings(wakeUp);
-  doingThings(cafe);
-  doingThings(dormir);
 
   // exercicio Higher Order Function:
 
-  const mult = (num1, num2) => num1 + num2;
+  const sum = (num1, num2) => num1 + num2;
+  const sub = (num1, num2) => num1 - num2;
+  const mult = (num1, num2) => num1 * num2;
+  const div = (num1, num2) => num1 / num2;
 
   const calculator = (func) => func(10, 5);
+  console.log(calculator(sum));
+  console.log(calculator(sub));
   console.log(calculator(mult));
+  console.log(calculator(div));
+
+
+
+    // exercício aula 8.1
+
+    const wakeUp = () => 'Acordando!!';
+    const cafe = () => 'Bora tomar café!!';
+    const dormir = () => 'Partiu dormir!!';
+    
+    const doingThings = (callback) => {
+      const result = callback();
+      console.log(result);
+    };
+  
+  
+    doingThings(wakeUp);
+    doingThings(cafe);
+    doingThings(dormir);
