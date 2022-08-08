@@ -137,13 +137,108 @@ DROP: Permite deletar objetos;
 <mark>ORDER BY coluna1, coluna2</mark>
 <mark>ORDER BY coluna1 DESC, coluna2</mark>
 
-### Exercicio:
-Usando a tabela film:
-Selecione todos os dados da tabela. Pronto, fez isso?
-Agora vamos tentar fazer o seguinte: Crie uma query para encontrar os 20 primeiros filmes, incluindo o título, o ano de lançamento, a duração, a classificação indicativa e o custo de substituição. Ordene os resultados pelos filmes com a maior duração e depois pelo menor custo de substituição.
+---
+## Usando o WHERE, AND, OU, IS:
+SELECT * FROM sakila.actor
+WHERE last_name = 'DAVIS';
 
-### Solution:
-SELECT title, release_year, rental_duration, replacement_cost FROM sakila.film <BR>
-ORDER BY rental_duration DESC, replacement_cost ASC LIMIT 20;
+SELECT * FROM sakila.film
+WHERE length < 50
+ORDER BY length;
 
-<mark></mark>
+SELECT * FROM sakila.film
+WHERE title <> 'ALIEN CENTER'
+AND replacement_cost > 12.99;
+
+SELECT * FROM sakila.film
+WHERE rating = 'G'
+OR rating = 'PG';
+
+SELECT * FROM sakila.rental
+WHERE return_date is NULL;
+
+
+
+----------------------------------------------------------------
+
+## Ordem dos operadores:
+() > *|/ > -|+ > NOT > AND > OR
+
+----------------------------------------------------------------
+
+SELECT * FROM sakila.payment
+WHERE amount = 0.99 OR amount = 2.99 AND staff_id = 2;
+
+---
+
+## Como fazer busca com que palavras:
+### Todos os filmes que não começam com a palavra academy
+SELECT * FROM sakila.film
+WHERE title NOT LIKE 'academy%';
+
+### Todos os filmes que terminam com a palavra DOM;
+SELECT * FROM sakila.film
+WHERE title LIKE '%don';
+
+### Encontrar qualquer resultado que contenha a palavra DOM;
+SELECT * FROM sakila.film
+WHERE title LIKE '%dom%';
+
+### Encontrar qualquer resultado que inicia com a p e finaliza com r:
+SELECT * FROM sakila.film
+WHERE title LIKE 'p%r';
+
+### Encontrar qualquer resultado em que o segundo caractere da frase é C:
+SELECT * FROM sakila.film
+WHERE title LIKE '_C%';
+
+### Encontrar qualquer resultado em que o titulo possui exatamente 8 caracteres:
+SELECT * FROM sakila.film
+WHERE title LIKE '________';
+
+### Similar ao de cima, mas que inicia com a letra E:
+SELECT * FROM sakila.film
+WHERE title LIKE 'E__%';
+
+---------------------------
+## Utilizando o IN:
+SELECT * from sakila.actor
+WHERE first_name IN ('PENELOPE', 'NICK', 'ED', 'JENNIFER');
+
+---
+## Utilizando o BETWEEN:
+SELECT title, length FROM sakila.film
+WHERE length BETWEEN 50 AND 120;
+
+SELECT * FROM sakila.language
+WHERE name BETWEEN 'Italian' AND 'Mandarin'
+ORDER BY name;
+
+SELECT rental_id, rental_date FROM sakila.rental
+WHERE rental_date
+BETWEEN '2005-05-27' AND '2005-07-17';
+
+----------------------
+## Buscando por data:
+SELECT * FROM sakila.payment
+WHERE DATE(payment_date) = '2005-07-31';
+
+### Usando LIKE para valores aproximados:
+SELECT * FROM sakila.payment
+WHERE payment_date LIKE '2005-07-31%';
+
+### Utilizando DATA com BETWEEN:
+SELECT *
+FROM sakila.payment
+WHERE payment_date BETWEEN '2005-05-26 00:00:00' AND '2005-05-27 23:59:59';
+
+## Buscando apenas uma parte da data:
+-- Teste cada um dos comandos a seguir:
+SELECT DATE(payment_date) FROM sakila.payment; -- YYYY-MM-DD
+SELECT YEAR(payment_date) FROM sakila.payment; -- Ano
+SELECT MONTH(payment_date) FROM sakila.payment; -- Mês
+SELECT DAY(payment_date) FROM sakila.payment; -- Dia
+SELECT HOUR(payment_date) FROM sakila.payment; -- Hora
+SELECT MINUTE(payment_date) FROM sakila.payment; -- Minuto
+SELECT SECOND(payment_date) FROM sakila.payment; -- Segundo
+
