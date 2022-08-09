@@ -242,3 +242,13 @@ SELECT HOUR(payment_date) FROM sakila.payment; -- Hora
 SELECT MINUTE(payment_date) FROM sakila.payment; -- Minuto
 SELECT SECOND(payment_date) FROM sakila.payment; -- Segundo
 
+## Cast transformando uma string em datetime:
+SELECT DISTINCT student_name, grade, dat0e_analysis FROM statistic
+WHERE date_analysis
+  between
+    CAST('2022-08-06 00:00:00'AS datetime)
+  AND
+    CAST('2022-08-07 23:59:59' AS datetime)
+  AND
+    project_name = 'docker-to-do-list'
+  ORDER BY grade DESC;
