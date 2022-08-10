@@ -252,3 +252,134 @@ WHERE date_analysis
   AND
     project_name = 'docker-to-do-list'
   ORDER BY grade DESC;
+
+  
+  ----------------------------------------------------------------
+  ## Deletando banco de dados no Workbench:
+  Selecionado banco, clicar com o botão direito do mouse e escolher DROP SCHEMA > DROP NOW
+
+  ## Criar o mesmo banco novamente:
+  Salvar o arquivo
+https://assets.app.betrybe.com/back-end/sakila-1ae15ae82697888c35bf1f1c8acbf755.sql
+
+---
+## Como inserir novos dados (linhas) na tabela:
+INSERT INTO nome_da_tabela (coluna1, coluna2)
+VALUES ('valor_coluna1', 'valor_coluna2');
+
+## Como inserir múltiplas linhas ao mesmo tempo:
+INSERT INTO nome_da_tabela (coluna1, coluna2) VALUES
+('valor_1','valor_2'),
+('valor_3','valor_4'),
+('valor_5','valor_6');
+
+---
+## Para ignorar erros no momento da inserção de dados:
+INSERT IGNORE INTO pessoas (id, name) VALUES
+(4,'Gloria'), -- Sem o IGNORE, essa linha geraria um erro e o INSERT não continuaria.
+(5,'Amanda');
+
+-- Pesquisando agora, você verá que a informação duplicada não foi inserida.
+-- Porém os dados corretos foram inseridos com sucesso.
+SELECT * FROM pessoas;
+
+## Inserir dados de outra tabela:
+INSERT INTO tabelaA (coluna1, coluna2)
+    SELECT tabelaB.coluna1, tabelaB.coluna2
+    FROM tabelaB
+    WHERE tabelaB.nome_da_coluna <> 'algumValor'
+    ORDER BY tabelaB.coluna_de_ordenacao;
+
+## Criando tabelas temporárias:
+INSERT INTO sakila.actor (first_name, last_name)
+	SELECT first_name, last_name FROM sakila.staff;
+
+  ---
+
+## Atualizando dados:
+UPDATE sakila.staff
+SET first_name = 'Rannveig'
+WHERE first_name = 'Ravein';
+
+UPDATE nome_da_tabela
+SET propriedade_a_ser_alterada = 'novo valor para coluna'
+WHERE alguma_condicao; -- importantíssimo aplicar o WHERE para não alterar a tabela inteira!
+
+### Alterando mais de uma coluna ao mesmo tempo:
+UPDATE sakila.staff
+SET first_name = 'Rannveig', last_name = 'Jordan'
+WHERE staff_id = 4;
+
+---
+
+## Atualizando em massa:
+-- Opção 1 - Incluindo a lista de condições fixas
+UPDATE sakila.actor
+SET first_name = 'JOE'
+WHERE actor_id IN (1,2,3);
+
+-- Opção 2 - Especificando como cada entrada será alterada individualmente
+UPDATE sakila.actor
+SET first_name = (
+CASE actor_id WHEN 1 THEN 'JOE' -- se actor_id = 1, alterar first_name para 'JOE'
+              WHEN 2 THEN 'DAVIS' -- se actor_id = 2, alterar first_name para 'DAVIS'
+              WHEN 3 THEN 'CAROLINE' -- se actor_id = 3, alterar first_name para 'CAROLINE'
+	      ELSE first_name -- em todos os outros casos, mantém-se o first_name
+END);
+
+## Atualizando de forma sequencial:
+UPDATE nome_da_tabela
+SET coluna1 = valor1, coluna2 = valor2
+[WHERE condições]
+[ORDER BY expressao [ ASC | DESC ]]
+[LIMIT quantidade_resultados];
+
+-- Exemplo:
+UPDATE sakila.staff
+SET password = 'FavorResetarSuaSenha123'
+WHERE active = 1
+ORDER BY last_update
+LIMIT 2;
+
+---
+
+## Safe updates para evitar que aconteçam erros ao atualizar dados:
+### Sempre em uma nova janela antes de rodar UPDATE/DELETE
+SET sql_safe_updates=1, sql_select_limit=1000, max_join_size=1000000;
+
+## Desabilitando:
+SET SQL_SAFE_UPDATES = 0;
+
+---
+
+## Excluindo dados de uma tabela:
+DELETE FROM banco_de_dados.tabela
+WHERE coluna = 'valor';
+-- O WHERE é opcional. Porém, sem ele, todas as linhas da tabela seriam excluídas.
+
+DELETE FROM sakila.film_text
+WHERE title = 'ACADEMY DINOSAUR';
+
+## Em caso se restrição por foreign key:
+Deletar primeiro a dependência na tabela que recebe o item;
+Depois deletar na tabela original
+
+---
+
+## Restrições de DELETE:
+-- Rejeita o comando DELETE.
+ON DELETE NO ACTION;
+
+-- Rejeita o comando DELETE.
+ON DELETE RESTRICT;
+
+-- Permite a exclusão dos registros da tabela pai, e seta para NULL os registros da tabela filho.
+ON DELETE SET NULL;
+
+-- Exclui a informação da tabela pai e registros relacionados.
+ON DELETE CASCADE;
+
+---
+
+## Para deletar tudo de uma vez:
+TRUNCATE banco_de_dados.tabela;
