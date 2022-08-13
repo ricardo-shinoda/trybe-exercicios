@@ -1,3 +1,4 @@
+-- Active: 1660327180226@@127.0.0.1@3306@sakila
 -- INNER JOIN - Onde há valores em comum nas duas tabelas:
 SELECT t1.coluna, t2.coluna
 FROM tabela1 AS t1

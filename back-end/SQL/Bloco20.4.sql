@@ -29,14 +29,14 @@ WHERE director = 'John Lasseter';
 
 
 
-Exercício 4: O título do filme "Ratatouille" está incorreto na tabela Movies. Além disso, o filme foi lançado em 2007 e não em 2010. Corrija esses dados utilizando o comando UPDATE.
+-- Exercício 4: O título do filme "Ratatouille" está incorreto na tabela Movies. Além disso, o filme foi lançado em 2007 e não em 2010. Corrija esses dados utilizando o comando UPDATE.
 
 UPDATE Pixar.Movies
 SET title = 'Ratatouille', year = 2007
 WHERE title = 'ratatui';
 
 
-Exercício 5: Insira as novas classificações abaixo na tabela BoxOffice, lembre-se que a coluna movie_id é uma foreign key referente a coluna id da tabela Movies:
+-- Exercício 5: Insira as novas classificações abaixo na tabela BoxOffice, lembre-se que a coluna movie_id é uma foreign key referente a coluna id da tabela Movies:
     12-Monsters SA, classificado em 8.5, lucrou 300 milhões no mercado interno e 250 milhões no mercado internacional.
 
     14-Os Incríveis, classificado em 7.4, lucrou 460 milhões no mercado interno e 510 milhões no mercado internacional.
@@ -50,7 +50,7 @@ VALUES (12, 8.5, 300000000, 250000000),
 (15, 9.9, 290000000, 280000000);
 
 
-Exercício 6: Exclua da tabela Movies o filme "WALL-E".
+-- Exercício 6: Exclua da tabela Movies o filme "WALL-E".
 
 DELETE from Pixar.BoxOffice
 WHERE movie_id = 15;
@@ -59,7 +59,7 @@ DELETE from Pixar.Movies
 WHERE title = 'WALL-E';
 
 
-Exercício 7: Exclua da tabela Movies todos os filmes dirigidos por "Andrew Staton".
+-- Exercício 7: Exclua da tabela Movies todos os filmes dirigidos por "Andrew Staton".
 
 DELETE from Pixar.BoxOffice
 WHERE movie_id IN (1, 2, 5, 6);
