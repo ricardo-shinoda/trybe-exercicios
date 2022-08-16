@@ -46,4 +46,44 @@ CREATE TABLE funcionarios(
     INSERT INTO funcionario_setor (funcionario_id, setor_id) VALUES(14, 2);
     INSERT INTO funcionario_setor (funcionario_id, setor_id) VALUES(15, 5);
 
+-- Comece criando o banco de dados Albuns. Você pode usar o comando DROP SCHEMA IF EXISTS para derrubar o banco de dados de mesmo nome construido previamente, seguido do comando CREATE e USE para recria-lo e garantir que os comandos posteriores sejam aplicados ao banco de dados correto.
+
+    DROP SCHEMA IF EXISTS Albuns;
+    CREATE SCHEMA Albuns;
+    USE Albuns;
+
+
+-- Crie a tabela de artistas.
+    CREATE TABLE artista(
+	    artista_id INT PRIMARY KEY AUTO_INCREMENT,
+	    nome VARCHAR(50) NOT NULL
+    );
+
+-- Crie a tabela de estilos musicais.
+    CREATE TABLE estilo_musical(
+	    estilo_id INT PRIMARY KEY AUTO_INCREMENT,
+	    nome VARCHAR(50) NOT NULL
+    );
+
+-- Crie a tabela de albuns levando em consideração que as colunas de estilo e artista são chaves estrangeiras referenciando as tabelas criadas anteriormente.
+
+    CREATE TABLE album(
+	    album_id INT PRIMARY KEY AUTO_INCREMENT,
+	    titulo VARCHAR(50) NOT NULL,
+	    preço INT NOT NULL,
+        estilo_id INT NOT NULL,
+        artista_id INT NOT NULL,
+	    FOREIGN KEY (estilo_id) REFERENCES estilo_musical (estilo_id),
+        FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
+    );
+
+-- Crie a tabela de canções levando em consideração que a coluna de album deve ser uma chave estrangeira referenciando a tabela correspondente.
+
+    CREATE TABLE cancao(
+	    cancao_id INT PRIMARY KEY AUTO_INCREMENT,
+	    nome VARCHAR(50) NOT NULL,
+        album_id INT NOT NULL,
+	    FOREIGN KEY (album_id) REFERENCES album (album_id)
+    );
+
 
