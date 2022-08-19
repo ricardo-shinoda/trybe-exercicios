@@ -1,6 +1,6 @@
 const readline = require('readline-sync')
 
-const peso = readline.questionInt(`What's your weight? `);
+const peso = readline.questionFloat(`What's your weight? `);
 const alt = readline.questionInt(`What's your height? `);
 
 // const weightKg = 79;
