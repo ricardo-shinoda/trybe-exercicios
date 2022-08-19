@@ -1,19 +1,24 @@
-const weightKg = 80;
-const heightCm = 174;
+const readline = require('readline-sync')
 
-function handleBmi(weight, height) {
-    console.log(`weight: ${weight}, height: ${height}`);
+const peso = readline.questionInt(`What's your weight? `);
+const alt = readline.questionInt(`What's your height? `);
 
-    const heightMeter = height / 100;
-    const heightSquare = height * 2;
+// const weightKg = 79;
+// const heightCm = 174;
+
+function handleBmi(peso, alt) {
+    console.log(`weight: ${peso}, height: ${alt}`);
+
+    const heightMeter = alt / 100;
+    const heightSquare = alt * 2;
     
-    const bmi = weight / heightSquare;
+    const bmi = peso / heightSquare;
 
     return bmi;
 } 
 
 function main () {
-    const bmi = handleBmi(weightKg, heightCm);
+    const bmi = handleBmi(peso, alt);
     console.log(`BMI: ${bmi.toFixed(2)}`)
 }
 main();
