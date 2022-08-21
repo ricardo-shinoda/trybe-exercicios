@@ -114,7 +114,7 @@ async function createNewFile() {
 
 }
 
-function mais() {
+function main() {
     createNewFile();
 }
 
