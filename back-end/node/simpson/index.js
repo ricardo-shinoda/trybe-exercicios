@@ -102,20 +102,55 @@
 
 //! Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json, contendo as personagens com id de 1 a 4.
 
+// const fs = require('fs').promises;
+
+// async function createNewFile() {
+//     const fileContent = await fs.readFile('./simpsons.json', 'utf-8');
+//     const simpsons = JSON.parse(fileContent);
+//     const familyIds = [1, 2, 3, 4];
+//     const simpsonsFamily = simpsons.filter((simpson) => familyIds.includes(Number(simpson.id)));
+
+//     await fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily));
+// }
+
+// function main() {
+//     createNewFile();
+// }
+// main();
+
+//! Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz.
+
+// const fs = require('fs').promises;
+
+// async function addToFile() {
+//     const fileContent = await fs.readFile('./simpsonsFamily.json', 'utf-8');
+//     const simpsonsFamily = JSON.parse(fileContent);
+//     simpsonsFamily.push({id: '8', name: 'Nelson Muntz' });
+
+//     await fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily));
+// }
+
+// function main() {
+//     addToFile()
+// }
+
+// main();
+
+//! Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json.
+
 const fs = require('fs').promises;
 
-async function createNewFile() {
-    const fileContent = await fs.readFile('./simpsons.json', 'utf-8');
-    const simpsons = JSON.parse(fileContent);
-    const familyIds = [1, 2, 3, 4];
-    const simpsonsFamily = simpsons.filter((simpson) => familyIds.includes(Number(simpson.id)));
-
-    await fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily));
+async function changeInputs() {
+    const fileContent = await fs.readFile('./simpsonsFamily.json', 'utf-8');
+    const simpsonsFamily = JSON.parse(fileContent);
+    const simpson = simpsonsFamily.filter((simpson) => simpson.id !== '8');
+    const simpsonsWithMaggie = simpson.concat([{ id: '15', name: 'Maggie Simpson' }]);
+    return fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsWithMaggie));
 
 }
 
 function main() {
-    createNewFile();
+    changeInputs()
 }
 
 main();
